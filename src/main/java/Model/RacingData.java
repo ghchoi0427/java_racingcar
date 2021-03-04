@@ -2,14 +2,11 @@ package Model;
 
 import racingcar.Car;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RacingData {
     int trial;
-    int carCount;
     Map<Car,Integer> progress = new HashMap<>();
 
     public Map<Car, Integer> getProgress() {
@@ -26,14 +23,6 @@ public class RacingData {
 
     public void setTrial(int trial) {
         this.trial = trial;
-    }
-
-    public int getCarCount() {
-        return carCount;
-    }
-
-    public void setCarCount(int carCount) {
-        this.carCount = carCount;
     }
 
 }
