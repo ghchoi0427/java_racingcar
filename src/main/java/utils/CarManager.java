@@ -5,7 +5,11 @@ import racingcar.Car;
 import java.util.*;
 
 public class CarManager {
-    GameManager gm = new GameManager();
+    GameManager gm;
+
+    public CarManager(GameManager gm) {
+        this.gm = gm;
+    }
 
     public void createCars(String[] carNames) {
         Map<Car, Integer> progress = new HashMap<>();
@@ -23,8 +27,6 @@ public class CarManager {
             int temp = progress.get(c);
             progress.put(c, temp + moveCar());
         }
-
-        System.out.println(progress);
         gm.rData.setProgress(progress);
     }
 
