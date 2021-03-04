@@ -32,8 +32,8 @@ public class OutputView {
         Map<Car, Integer> progress = gm.rData.getProgress();
         Set<Car> carSet = progress.keySet();
 
-        for(Car c : carSet){
-            System.out.format("%s : %s",c.getName(),progressBarFactory(progress.get(c))).println();
+        for (Car c : carSet) {
+            System.out.format("%s : %s", c.getName(), progressBarFactory(progress.get(c))).println();
         }
     }
 
@@ -43,5 +43,9 @@ public class OutputView {
             bar += "-";
         }
         return bar;
+    }
+
+    public void finalResult() {
+        System.out.println();
     }
 }
