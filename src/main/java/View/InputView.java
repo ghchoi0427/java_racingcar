@@ -6,12 +6,13 @@ import utils.InputValidator;
 
 public class InputView {
     CarManager cm;
-    public InputView(CarManager cm) {
-        this.cm = cm;
-    }
-
     InputValidator inputValidator = new InputValidator();
-    GameManager gm = new GameManager();
+    GameManager gm;
+
+    public InputView(CarManager cm, GameManager gm) {
+        this.cm = cm;
+        this.gm = gm;
+    }
 
     public void inputCars(String cars){
         inputValidator.carNameInputVal(cars);
