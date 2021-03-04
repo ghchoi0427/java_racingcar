@@ -2,6 +2,7 @@ package View;
 
 import racingcar.Car;
 import utils.GameManager;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -25,16 +26,16 @@ public class OutputView {
         System.out.println(MSG_INPUT_REPS);
     }
 
-    public void printRaceResult(){
-        Map<Car,Integer> progress = gm.rData.getProgress();
+    public void printRaceResult() {
+        Map<Car, Integer> progress = gm.rData.getProgress();
         Set<Car> keys = progress.keySet();
 
     }
 
-    public String drawProgressBar(int distance){
+    public String progressBarFactory(int distance) {
         String bar = "";
         for (int i = 0; i < distance; i++) {
-            bar+="-";
+            bar += "-";
         }
         return bar;
     }
