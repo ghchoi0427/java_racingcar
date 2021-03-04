@@ -9,8 +9,9 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarManagerTest {
-    CarManager cm = new CarManager();
     GameManager gm = new GameManager();
+    CarManager cm = new CarManager(gm);
+
 
     @Test
     public void testRace(){
