@@ -9,12 +9,4 @@ public class Car {
     }
     // 추가 기능 구현
 
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
 }
