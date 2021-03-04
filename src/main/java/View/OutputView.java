@@ -1,9 +1,11 @@
 package View;
 
+import com.sun.tools.javac.util.Context;
 import racingcar.Car;
 import utils.GameManager;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -28,8 +30,11 @@ public class OutputView {
 
     public void printRaceResult() {
         Map<Car, Integer> progress = gm.rData.getProgress();
-        Set<Car> keys = progress.keySet();
+        Set<Car> carSet = progress.keySet();
 
+        for(Car c : carSet){
+            System.out.format("%s : %s",c.getName(),progressBarFactory(progress.get(c))).println();
+        }
     }
 
     public String progressBarFactory(int distance) {
