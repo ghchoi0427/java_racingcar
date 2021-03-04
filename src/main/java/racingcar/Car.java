@@ -7,6 +7,14 @@ public class Car {
     public Car(String name) {
         this.name = name;
     }
-
     // 추가 기능 구현
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
 }
