@@ -10,7 +10,6 @@ import java.util.Map;
 public class RacingData {
     int trial;
     int carCount;
-    List<Car> cars = new ArrayList<>();
     Map<Car,Integer> progress = new HashMap<>();
 
     public Map<Car, Integer> getProgress() {
@@ -35,14 +34,6 @@ public class RacingData {
 
     public void setCarCount(int carCount) {
         this.carCount = carCount;
-    }
-
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
     }
 
 }
