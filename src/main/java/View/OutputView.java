@@ -1,11 +1,7 @@
 package View;
 
-import com.sun.tools.javac.util.Context;
 import racingcar.Car;
 import utils.GameManager;
-
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
