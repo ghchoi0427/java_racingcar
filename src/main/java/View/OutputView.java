@@ -12,4 +12,8 @@ public class OutputView {
     public void MsgInputNums() {
         System.out.println(MSG_INPUT_REPS);
     }
+
+    public void printRaceResult(){
+
+    }
 }
