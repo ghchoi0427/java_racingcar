@@ -50,12 +50,4 @@ public class OutputView {
 
         System.out.println();
     }
-
-    public List<Car> getWinner(){
-        Map<Car,Integer> map = gm.rData.getProgress();
-        Set<Car> carSet = map.keySet();
-        List<Car> winners = new ArrayList<>();
-
-        return winners;
-    }
 }
