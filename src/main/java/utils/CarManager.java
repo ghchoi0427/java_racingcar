@@ -39,9 +39,6 @@ public class CarManager {
 
     public boolean moveOrStay() {
         int random = RandomUtils.nextInt(0, 9);
-        if (random >= 4) {
-            return true;
-        }
-        return false;
+        return random>=4;
     }
 }
