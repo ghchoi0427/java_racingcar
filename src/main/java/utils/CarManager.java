@@ -12,7 +12,7 @@ public class CarManager {
     }
 
     public void createCars(String[] carNames) {
-        Map<Car, Integer> progress = new HashMap<>();
+        LinkedHashMap<Car, Integer> progress = new LinkedHashMap<>();
 
         for (int i = 0; i < carNames.length; i++) {
             progress.put(new Car(carNames[i]), 0);
