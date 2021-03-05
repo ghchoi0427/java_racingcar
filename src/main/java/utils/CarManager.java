@@ -21,7 +21,7 @@ public class CarManager {
     }
 
     public void race() {
-        Map<Car, Integer> progress = gm.rData.getProgress();
+        LinkedHashMap<Car, Integer> progress = gm.rData.getProgress();
         Set<Car> cars = progress.keySet();
         for (Car c : cars) {
             int temp = progress.get(c);

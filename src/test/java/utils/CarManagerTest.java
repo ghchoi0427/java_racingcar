@@ -3,7 +3,7 @@ package utils;
 import org.junit.jupiter.api.Test;
 import racingcar.Car;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +15,7 @@ class CarManagerTest {
 
     @Test
     public void testRace(){
-        Map<Car,Integer> map = new HashMap<>();
+        LinkedHashMap<Car,Integer> map = new LinkedHashMap<>();
         map.put(new Car("carA"),0);
         map.put(new Car("carB"),0);
         map.put(new Car("carC"),0);
