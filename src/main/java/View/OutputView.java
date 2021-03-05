@@ -2,6 +2,9 @@ package View;
 
 import racingcar.Car;
 import utils.GameManager;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -31,6 +34,7 @@ public class OutputView {
         for (Car c : carSet) {
             System.out.format("%s : %s", c.getName(), progressBarFactory(progress.get(c))).println();
         }
+        System.out.println();
     }
 
     public String progressBarFactory(int distance) {
@@ -42,6 +46,16 @@ public class OutputView {
     }
 
     public void finalResult() {
+
+
         System.out.println();
+    }
+
+    public List<Car> getWinner(){
+        Map<Car,Integer> map = gm.rData.getProgress();
+        Set<Car> carSet = map.keySet();
+        List<Car> winners = new ArrayList<>();
+
+        return winners;
     }
 }
