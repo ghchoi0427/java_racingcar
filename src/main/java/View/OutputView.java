@@ -3,15 +3,15 @@ package View;
 import racingcar.Car;
 import utils.GameManager;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class OutputView {
 
-    final String MSG_INPUT_CAR_NAMES = "Please input names of cars.(names are distinguished by comma(,))";
-    final String MSG_INPUT_REPS = "how many repetitions?";
+    private final String MSG_INPUT_CAR_NAMES = "Please input names of cars.(names are distinguished by comma(,))";
+    private final String MSG_INPUT_REPS = "how many repetitions?";
+    String MSG_FINAL = "final winner : ";
 
     GameManager gm;
 
@@ -46,8 +46,10 @@ public class OutputView {
     }
 
     public void finalResult() {
-
-
-        System.out.println();
+        List<Car> winnerList = gm.getWinner();
+        for(Car c : winnerList){
+            MSG_FINAL+=String.format("%s ",c.getName());
+        }
+        System.out.println(MSG_FINAL);
     }
 }
