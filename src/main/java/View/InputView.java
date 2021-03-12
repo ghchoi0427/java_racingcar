@@ -5,9 +5,9 @@ import utils.GameManager;
 import utils.InputValidator;
 
 public class InputView {
-    CarManager cm;
-    InputValidator inputValidator = new InputValidator();
-    GameManager gm;
+    private CarManager cm;
+    private InputValidator inputValidator = new InputValidator();
+    private GameManager gm;
 
     public InputView(CarManager cm, GameManager gm) {
         this.cm = cm;
