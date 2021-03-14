@@ -1,7 +1,6 @@
 package View;
 
 import racingcar.Car;
-import utils.GameManager;
 
 import java.util.List;
 import java.util.Map;
