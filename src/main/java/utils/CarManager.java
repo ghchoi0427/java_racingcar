@@ -5,9 +5,9 @@ import racingcar.Car;
 import java.util.*;
 
 public class CarManager {
-    GameManager gm;
 
-    public CarManager() { }
+    public CarManager() {
+    }
 
     public static LinkedHashMap<Car, Integer> createCarMap(String[] carNames) {
 
