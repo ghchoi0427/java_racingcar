@@ -19,12 +19,8 @@ public class GameManager {
     }
 
     private static int getMaxRecord(Map<Car, Integer> map) {
-        int max = 0;
-        for (Map.Entry<Car, Integer> entry : map.entrySet()) {
-            if (max < entry.getValue()) {
-                max = entry.getValue();
-            }
-        }
+        int max = map.entrySet().stream().map(e->e.getValue()).mapToInt(e->e).max().orElseThrow(NoSuchElementException::new);
+
         return max;
     }
 
