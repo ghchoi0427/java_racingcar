@@ -24,7 +24,7 @@ public class OutputView {
         System.out.println(MSG_INPUT_REPS);
     }
 
-    public void printRaceResult(Map<Car, Integer> CarMap) {
+    public static void printRaceResult(Map<Car, Integer> CarMap) {
         Set<Car> carSet = CarMap.keySet();
 
         for (Car c : carSet) {
@@ -33,7 +33,7 @@ public class OutputView {
         System.out.println();
     }
 
-    public String progressBarFactory(int distance) {
+    private static String progressBarFactory(int distance) {
         String bar = "";
         for (int i = 0; i < distance; i++) {
             bar += "-";
