@@ -19,9 +19,8 @@ public class GameManager {
     }
 
     private static int getMaxRecord(Map<Car, Integer> map) {
-        int max = map.entrySet().stream().map(e->e.getValue()).mapToInt(e->e).max().orElseThrow(NoSuchElementException::new);
 
-        return max;
+        return map.entrySet().stream().map(e -> e.getValue()).mapToInt(e -> e).max().orElseThrow(NoSuchElementException::new);
     }
 
     public static void startGame() {
