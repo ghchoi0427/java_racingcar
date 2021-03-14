@@ -11,8 +11,8 @@ public class GameManager {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public List<Car> getWinner(Map<Car, Integer> carMap) {
-        List<Car> winners = new ArrayList<>();
+    private static List<Car> getWinner(Map<Car, Integer> carMap) {
+        List<Car> winners;
         int max = getMaxRecord(carMap);
         winners = carMap.keySet().stream().filter(car -> carMap.get(car) == max).collect(Collectors.toList());
         return winners;
@@ -40,7 +40,6 @@ public class GameManager {
             OutputView.printRaceResult(cars);
         }
 
-
-        OutputView.finalResult();
+        OutputView.finalResult(getWinner(cars));
     }
 }
