@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class GameManager {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     private static List<Car> getWinner(Map<Car, Integer> carMap) {
         List<Car> winners;
