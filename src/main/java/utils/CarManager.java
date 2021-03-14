@@ -7,37 +7,35 @@ import java.util.*;
 public class CarManager {
     GameManager gm;
 
-    public CarManager(GameManager gm) {
-        this.gm = gm;
-    }
+    public CarManager() { }
 
-    public void createCars(String[] carNames) {
-        LinkedHashMap<Car, Integer> progress = new LinkedHashMap<>();
+    public static LinkedHashMap<Car, Integer> createCarMap(String[] carNames) {
+
+        LinkedHashMap<Car, Integer> carHashMap = new LinkedHashMap<>();
 
         for (int i = 0; i < carNames.length; i++) {
-            progress.put(new Car(carNames[i]), 0);
+            carHashMap.put(new Car(carNames[i]), 0);
         }
-        gm.rData.setProgress(progress);
+        return carHashMap;
     }
 
-    public void race() {
-        LinkedHashMap<Car, Integer> progress = gm.rData.getProgress();
-        Set<Car> cars = progress.keySet();
-        for (Car c : cars) {
-            int temp = progress.get(c);
-            progress.put(c, temp + moveCar());
+    public static LinkedHashMap<Car, Integer> race(LinkedHashMap<Car, Integer> carMap) {
+        Set<Car> carSet = carMap.keySet();
+        for (Car c : carSet) {
+            int temp = carMap.get(c);
+            carMap.put(c, temp + moveCar());
         }
-        gm.rData.setProgress(progress);
+        return carMap;
     }
 
-    public int moveCar() {
+    private static int moveCar() {
         if (moveOrStay()) {
             return 1;
         }
         return 0;
     }
 
-    public boolean moveOrStay() {
+    private static boolean moveOrStay() {
         int random = RandomUtils.nextInt(0, 9);
         return random >= 4;
     }
