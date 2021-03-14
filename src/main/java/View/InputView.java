@@ -2,7 +2,11 @@ package View;
 
 import utils.InputValidator;
 
+import java.util.Scanner;
+
 public class InputView {
+
+    private static Scanner scanner = new Scanner(System.in);
 
     public static String[] inputCars(String cars){
         InputValidator.carNameInputVal(cars);
@@ -10,7 +14,7 @@ public class InputView {
         return carNames;
     }
 
-    public static void inputReps(int reps){
-
+    public static int inputReps(){
+        return scanner.nextInt();
     }
 }
