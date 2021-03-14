@@ -15,6 +15,8 @@ public class InputView {
     }
 
     public static int inputReps(){
-        return scanner.nextInt();
+        int repetition = scanner.nextInt();
+        InputValidator.repInputVal(repetition);
+        return repetition;
     }
 }
