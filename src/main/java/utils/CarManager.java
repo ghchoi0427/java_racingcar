@@ -33,7 +33,6 @@ public class CarManager {
     }
 
     private static boolean isMovable() {
-        int random = RandomUtils.nextInt(0, 9);
-        return random >= 4;
+        return RandomUtils.nextInt(0, 9) >= 4;
     }
 }
