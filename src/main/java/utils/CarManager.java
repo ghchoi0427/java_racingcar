@@ -26,13 +26,13 @@ public class CarManager {
     }
 
     private static int moveCar() {
-        if (moveOrStay()) {
+        if (isMovable()) {
             return 1;
         }
         return 0;
     }
 
-    private static boolean moveOrStay() {
+    private static boolean isMovable() {
         int random = RandomUtils.nextInt(0, 9);
         return random >= 4;
     }
