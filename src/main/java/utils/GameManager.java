@@ -1,7 +1,7 @@
 package utils;
 
-import View.InputView;
-import View.OutputView;
+import view.InputView;
+import view.OutputView;
 import racingcar.Car;
 
 import java.util.*;
@@ -20,18 +20,22 @@ public class GameManager {
 
     private static int getMaxRecord(Map<Car, Integer> map) {
 
-        return map.values().stream().mapToInt(e -> e).max().orElseThrow(NoSuchElementException::new);
+        return map.values()
+                .stream()
+                .mapToInt(e -> e)
+                .max()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public static void startGame() {
 
         OutputView.MsgInputCars();
-        LinkedHashMap<Car, Integer> cars = CarManager.createCarMap(InputView.inputCars(scanner.next()));
+        final LinkedHashMap<Car, Integer> cars = CarManager.createCarMap(InputView.inputCars(scanner.next()));
         OutputView.MsgInputNums();
         final int rep = InputView.inputReps();
 
         for (int i = 0; i < rep; i++) {
-            cars = CarManager.race(cars);
+            CarManager.race(cars);
             OutputView.printRaceResult(cars);
         }
 
