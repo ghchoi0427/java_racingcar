@@ -20,8 +20,7 @@ public class CarManager {
     }
 
     public static void race(LinkedHashMap<Car, Integer> carMap) {
-        Set<Car> carSet = carMap.keySet();
-        for (Car c : carSet) {
+        for (Car c : carMap.keySet()) {
             carMap.put(c, carMap.get(c) + moveCar());
         }
     }
