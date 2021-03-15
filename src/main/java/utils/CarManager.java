@@ -6,6 +6,8 @@ import java.util.*;
 
 public class CarManager {
 
+    private static final int MINIMUM_MOVE_CONDITION = 4;
+
     public CarManager() {
     }
 
@@ -33,6 +35,6 @@ public class CarManager {
     }
 
     private static boolean isMovable() {
-        return RandomUtils.nextInt(0, 9) >= 4;
+        return RandomUtils.nextInt(0, 9) >= MINIMUM_MOVE_CONDITION;
     }
 }
