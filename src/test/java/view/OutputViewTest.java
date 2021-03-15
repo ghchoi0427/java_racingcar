@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import org.junit.jupiter.api.Test;
 import racingcar.Car;
@@ -8,11 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class OutputViewTest {
     GameManager gmTest = new GameManager();
-    OutputView outputView = new OutputView(gmTest);
+    //OutputView outputView = new OutputView(gmTest);
 
     @Test
     public void printRaceResultTest(){
