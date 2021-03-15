@@ -19,13 +19,11 @@ public class CarManager {
         return carHashMap;
     }
 
-    public static LinkedHashMap<Car, Integer> race(LinkedHashMap<Car, Integer> carMap) {
+    public static void race(LinkedHashMap<Car, Integer> carMap) {
         Set<Car> carSet = carMap.keySet();
         for (Car c : carSet) {
-            int temp = carMap.get(c);
-            carMap.put(c, temp + moveCar());
+            carMap.put(c, carMap.get(c) + moveCar());
         }
-        return carMap;
     }
 
     private static int moveCar() {
