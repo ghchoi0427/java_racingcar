@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarManagerTest {
     GameManager gm = new GameManager();
-    CarManager cm = new CarManager(gm);
 
 
     @Test
@@ -20,10 +19,6 @@ class CarManagerTest {
         map.put(new Car("carB"),0);
         map.put(new Car("carC"),0);
 
-        gm.rData.setProgress(map);
-        cm.race();
-        Map<Car,Integer> result = gm.rData.getProgress();
-        assertTrue(map.size()==3);
 
     }
 
