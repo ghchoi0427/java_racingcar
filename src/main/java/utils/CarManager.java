@@ -15,9 +15,10 @@ public class CarManager {
 
         LinkedHashMap<Car, Integer> carHashMap = new LinkedHashMap<>();
 
-        for (int i = 0; i < carNames.length; i++) {
-            carHashMap.put(new Car(carNames[i]), 0);
+        for (String carName : carNames) {
+            carHashMap.put(new Car(carName), 0);
         }
+
         return carHashMap;
     }
 
@@ -29,7 +30,7 @@ public class CarManager {
 
     private static void moveCar(LinkedHashMap<Car, Integer> carMap, Car car) {
         if (isMovable()) {
-             carMap.put(car, carMap.get(car)+1);
+            carMap.put(car, carMap.get(car) + 1);
         }
     }
 
