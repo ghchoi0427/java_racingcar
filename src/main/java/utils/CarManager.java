@@ -23,15 +23,14 @@ public class CarManager {
 
     public static void race(LinkedHashMap<Car, Integer> carMap) {
         for (Car c : carMap.keySet()) {
-            carMap.put(c, carMap.get(c) + moveCar());
+            moveCar(carMap, c);
         }
     }
 
-    private static int moveCar() {
+    private static void moveCar(LinkedHashMap<Car, Integer> carMap, Car car) {
         if (isMovable()) {
-            return 1;
+             carMap.put(car, carMap.get(car)+1);
         }
-        return 0;
     }
 
     private static boolean isMovable() {
