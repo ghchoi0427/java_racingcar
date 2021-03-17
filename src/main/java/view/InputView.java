@@ -8,13 +8,12 @@ public class InputView {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static String[] inputCars(String cars){
+    public static String[] inputCars(String cars) {
         InputValidator.carNameInputVal(cars);
-        String[] carNames = cars.split(",");
-        return carNames;
+        return cars.split(",");
     }
 
-    public static int inputReps(){
+    public static int inputReps() {
         int repetition = scanner.nextInt();
         InputValidator.repInputVal(repetition);
         return repetition;
