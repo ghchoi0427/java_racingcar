@@ -24,9 +24,8 @@ public class OutputView {
     }
 
     public static void printRaceResult(Map<Car, Integer> CarMap) {
-        Set<Car> carSet = CarMap.keySet();
 
-        for (Car c : carSet) {
+        for (Car c : CarMap.keySet()) {
             System.out.format("%s : %s", c.getName(), progressBarFactory(CarMap.get(c))).println();
         }
         System.out.println();
