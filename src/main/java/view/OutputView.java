@@ -31,11 +31,11 @@ public class OutputView {
     }
 
     private static String progressBarFactory(int distance) {
-        String bar = "";
+        StringBuilder bar = new StringBuilder();
         for (int i = 0; i < distance; i++) {
-            bar += "-";
+            bar.append("-");
         }
-        return bar;
+        return bar.toString();
     }
 
     public static void finalResult(List<Car> winnerList) {
