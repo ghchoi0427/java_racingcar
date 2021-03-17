@@ -30,9 +30,9 @@ public class GameManager {
         OutputView.MsgInputCars();
         final LinkedHashMap<Car, Integer> cars = CarManager.createCarMap(InputView.inputCars(scanner.next()));
         OutputView.MsgInputNums();
-        final int rep = InputView.inputReps();
+        final int repetition = InputView.inputReps();
 
-        for (int i = 0; i < rep; i++) {
+        for (int i = 0; i < repetition; i++) {
             CarManager.race(cars);
             OutputView.printRaceResult(cars);
         }
