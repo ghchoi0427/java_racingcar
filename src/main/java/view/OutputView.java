@@ -22,10 +22,10 @@ public class OutputView {
         System.out.println(MSG_INPUT_REPS);
     }
 
-    public static void printRaceResult(Map<Car, Integer> CarMap) {
+    public static void printRaceResult(List<Car> carList) {
 
-        for (Car c : CarMap.keySet()) {
-            System.out.format("%s : %s", c.getName(), progressBarFactory(CarMap.get(c))).println();
+        for (Car car : carList) {
+            System.out.format("%s : %s", car.getName(), progressBarFactory(car.getPosition())).println();
         }
         System.out.println();
     }
