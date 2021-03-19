@@ -8,7 +8,6 @@ public class OutputView {
 
     private static final String MSG_INPUT_CAR_NAMES = "Please input names of cars.(names are distinguished by comma(,))";
     private static final String MSG_INPUT_REPS = "how many repetitions?";
-    private static String MSG_FINAL = "final winner : ";
 
     private OutputView() {
     }
@@ -29,7 +28,7 @@ public class OutputView {
         lineFeed();
     }
 
-    private static void lineFeed(){
+    private static void lineFeed() {
         System.out.println();
     }
 
@@ -42,9 +41,11 @@ public class OutputView {
     }
 
     public static void finalResult(List<Car> winnerList) {
+        StringBuilder MSG_FINAL = new StringBuilder();
+        MSG_FINAL.append("final winner : ");
         for (Car c : winnerList) {
-            MSG_FINAL += String.format("%s ", c.getName());
+            MSG_FINAL.append(String.format("%s ", c.getName()));
         }
-        System.out.println(MSG_FINAL);
+        System.out.println(MSG_FINAL.toString());
     }
 }
