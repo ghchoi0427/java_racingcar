@@ -19,9 +19,9 @@ public class CarManager {
         return carList;
     }
 
-    public static void race(LinkedHashMap<Car, Integer> carMap) {
-        for (Car c : carMap.keySet()) {
-            moveCar(carMap, c);
+    public static void race(List<Car> carList) {
+        for (Car car : carList) {
+            car.moveOn();
         }
     }
 
