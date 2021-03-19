@@ -3,7 +3,6 @@ package view;
 import racingcar.Car;
 
 import java.util.List;
-import java.util.Map;
 
 public class OutputView {
 
