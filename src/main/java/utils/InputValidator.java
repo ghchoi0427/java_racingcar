@@ -1,10 +1,13 @@
 package utils;
 
+import java.util.Arrays;
+
 public class InputValidator {
 
     private static final String ERROR_ZERO_INPUT = "input number cannot be zero";
     private static final String ERROR_SHORT_CAR = "car must be 2 at least";
     private static final String ERROR_BLANK_INPUT = "car must be 2 at least";
+    private static final String ERROR_OVERLAPPED_CAR = "cars should be distinguishable";
 
     public static void carNameInputValidator(String names) throws IllegalArgumentException {
         if (names.split(",").length == 0) {
@@ -13,6 +16,10 @@ public class InputValidator {
 
         if (names.isEmpty()) {
             throw new IllegalArgumentException(ERROR_BLANK_INPUT);
+        }
+
+        if (Arrays.stream(names.split(",")).distinct() != Arrays.stream(names.split(","))) {
+            throw new IllegalArgumentException(ERROR_OVERLAPPED_CAR);
         }
     }
 
