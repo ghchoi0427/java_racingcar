@@ -6,6 +6,7 @@ import racingcar.Car;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static utils.CarManager.*;
 import static view.OutputView.*;
 
 public class GameManager {
@@ -34,12 +35,12 @@ public class GameManager {
     public static void startGame() {
 
         MsgInputCars();
-        final List<Car> cars = CarManager.createCarList(InputView.inputCars(scanner.next()));
+        final List<Car> cars = createCarList(InputView.inputCars(scanner.next()));
         MsgInputNums();
         final int repetition = InputView.inputRepetition();
 
         for (int i = 0; i < repetition; i++) {
-            CarManager.race(cars);
+            race(cars);
             printRaceResult(cars);
         }
 
