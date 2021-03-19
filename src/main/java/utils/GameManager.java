@@ -32,7 +32,7 @@ public class GameManager {
         OutputView.MsgInputCars();
         final List<Car> cars = CarManager.createCarList(InputView.inputCars(scanner.next()));
         OutputView.MsgInputNums();
-        final int repetition = InputView.inputReps();
+        final int repetition = InputView.inputRepetition();
 
         for (int i = 0; i < repetition; i++) {
             CarManager.race(cars);
