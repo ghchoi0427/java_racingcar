@@ -18,7 +18,7 @@ public class InputValidator {
             throw new IllegalArgumentException(ERROR_BLANK_INPUT);
         }
 
-        if (Arrays.stream(names.split(",")).distinct() != Arrays.stream(names.split(","))) {
+        if (Arrays.stream(names.split(",")).distinct().count() != Arrays.stream(names.split(",")).count()) {
             throw new IllegalArgumentException(ERROR_OVERLAPPED_CAR);
         }
     }
