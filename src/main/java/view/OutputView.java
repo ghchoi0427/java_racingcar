@@ -40,7 +40,7 @@ public class OutputView {
         return bar.toString();
     }
 
-    public static void finalResult(List<Car> winnerList) {
+    public static void printFinalResult(List<Car> winnerList) {
         StringBuilder MSG_FINAL = new StringBuilder();
         MSG_FINAL.append("final winner : ");
         for (Car c : winnerList) {

@@ -42,6 +42,6 @@ public class GameManager {
             OutputView.printRaceResult(cars);
         }
 
-        OutputView.finalResult(getWinner(cars));
+        OutputView.printFinalResult(getWinner(cars));
     }
 }
