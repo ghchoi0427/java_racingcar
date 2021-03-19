@@ -11,17 +11,6 @@ public class CarManager {
     public CarManager() {
     }
 
-    public static LinkedHashMap<Car, Integer> createCarMap(String[] carNames) {
-
-        LinkedHashMap<Car, Integer> carHashMap = new LinkedHashMap<>();
-
-        for (String carName : carNames) {
-            carHashMap.put(new Car(carName), 0);
-        }
-
-        return carHashMap;
-    }
-
     public static List<Car> createCarList(String[] carNames) {
         List<Car> carList = new ArrayList<>();
         for (String carName : carNames) {
