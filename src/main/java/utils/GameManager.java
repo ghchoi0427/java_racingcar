@@ -34,9 +34,9 @@ public class GameManager {
 
     public static void startGame() {
 
-        MsgInputCars();
+        msgInputCars();
         final List<Car> cars = createCarList(InputView.inputCars(scanner.next()));
-        MsgInputNums();
+        msgInputNums();
         final int repetition = InputView.inputRepetition();
 
         for (int i = 0; i < repetition; i++) {

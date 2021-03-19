@@ -12,11 +12,11 @@ public class OutputView {
     private OutputView() {
     }
 
-    public static void MsgInputCars() {
+    public static void msgInputCars() {
         System.out.println(MSG_INPUT_CAR_NAMES);
     }
 
-    public static void MsgInputNums() {
+    public static void msgInputNums() {
         System.out.println(MSG_INPUT_REPS);
     }
 
