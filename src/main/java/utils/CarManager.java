@@ -22,6 +22,14 @@ public class CarManager {
         return carHashMap;
     }
 
+    public static List<Car> createCarList(String[] carNames) {
+        List<Car> carList = new ArrayList<>();
+        for (String carName : carNames) {
+            carList.add(new Car(carName));
+        }
+        return carList;
+    }
+
     public static void race(LinkedHashMap<Car, Integer> carMap) {
         for (Car c : carMap.keySet()) {
             moveCar(carMap, c);
