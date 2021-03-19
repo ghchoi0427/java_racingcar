@@ -12,8 +12,10 @@ public class GameManager {
     private static final Scanner scanner = new Scanner(System.in);
 
     private static List<Car> getWinner(List<Car> carList) {
-        int max = getMaxRecord(carList);
-        return carList.stream().filter(car -> car.getPosition() == max).collect(Collectors.toList());
+        return carList
+                .stream()
+                .filter(car -> car.getPosition() == getMaxRecord(carList))
+                .collect(Collectors.toList());
     }
 
     private static int getMaxRecord(List<Car> carList) {
