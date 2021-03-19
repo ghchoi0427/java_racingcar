@@ -1,14 +1,11 @@
 package utils;
 
 import racingcar.Car;
+import view.InputView;
+import view.OutputView;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static utils.CarManager.*;
-import static view.InputView.inputCars;
-import static view.InputView.inputRepetition;
-import static view.OutputView.*;
 
 public class GameManager {
 
@@ -35,16 +32,16 @@ public class GameManager {
 
     public static void startGame() {
 
-        msgInputCars();
-        final List<Car> cars = createCarList(inputCars(scanner.next()));
-        msgInputNums();
-        final int repetition = inputRepetition();
+        OutputView.msgInputCars();
+        final List<Car> cars = CarManager.createCarList(InputView.inputCars(scanner.next()));
+        OutputView.msgInputCars();
+        final int repetition = InputView.inputRepetition();
 
         for (int i = 0; i < repetition; i++) {
-            race(cars);
-            printRaceResult(cars);
+            CarManager.race(cars);
+            OutputView.printRaceResult(cars);
         }
 
-        printFinalResult(getWinner(cars));
+        OutputView.printFinalResult(getWinner(cars));
     }
 }
