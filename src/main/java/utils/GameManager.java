@@ -21,10 +21,10 @@ public class GameManager {
         return carList.stream().filter(car -> car.getPosition() == max).collect(Collectors.toList());
     }
 
-    private static int getMaxRecord(Map<Car, Integer> map) {
-
-        return map.values()
+    private static int getMaxRecord(List<Car> carList) {
+        return carList
                 .stream()
+                .map(car -> car.getPosition())
                 .mapToInt(e -> e)
                 .max()
                 .orElseThrow(NoSuchElementException::new);
