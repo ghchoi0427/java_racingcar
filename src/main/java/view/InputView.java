@@ -13,7 +13,7 @@ public class InputView {
         return cars.split(",");
     }
 
-    public static int inputReps() {
+    public static int inputRepetition() {
         int repetition = scanner.nextInt();
         InputValidator.repInputVal(repetition);
         return repetition;
