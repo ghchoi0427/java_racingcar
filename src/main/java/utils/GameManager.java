@@ -24,7 +24,7 @@ public class GameManager {
     private static int getMaxRecord(List<Car> carList) {
         return carList
                 .stream()
-                .map(car -> car.getPosition())
+                .map(Car::getPosition)
                 .mapToInt(e -> e)
                 .max()
                 .orElseThrow(NoSuchElementException::new);
