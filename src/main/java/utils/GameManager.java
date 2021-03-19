@@ -1,12 +1,13 @@
 package utils;
 
-import view.InputView;
 import racingcar.Car;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 import static utils.CarManager.*;
+import static view.InputView.inputCars;
+import static view.InputView.inputRepetition;
 import static view.OutputView.*;
 
 public class GameManager {
@@ -35,9 +36,9 @@ public class GameManager {
     public static void startGame() {
 
         msgInputCars();
-        final List<Car> cars = createCarList(InputView.inputCars(scanner.next()));
+        final List<Car> cars = createCarList(inputCars(scanner.next()));
         msgInputNums();
-        final int repetition = InputView.inputRepetition();
+        final int repetition = inputRepetition();
 
         for (int i = 0; i < repetition; i++) {
             race(cars);
