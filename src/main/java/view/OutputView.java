@@ -26,6 +26,10 @@ public class OutputView {
         for (Car car : carList) {
             System.out.format("%s : %s", car.getName(), progressBarFactory(car.getPosition())).println();
         }
+        lineFeed();
+    }
+
+    private static void lineFeed(){
         System.out.println();
     }
 
