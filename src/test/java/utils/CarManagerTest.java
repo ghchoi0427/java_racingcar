@@ -9,7 +9,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarManagerTest {
-    GameManager gm = new GameManager();
+    //GameManager gm = new GameManager();
 
 
     @Test

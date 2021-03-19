@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 class OutputViewTest {
-    GameManager gmTest = new GameManager();
+    //GameManager gmTest = new GameManager();
     //OutputView outputView = new OutputView(gmTest);
 
     @Test
