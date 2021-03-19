@@ -16,6 +16,11 @@ public class GameManager {
         return carMap.keySet().stream().filter(car -> carMap.get(car) == max).collect(Collectors.toList());
     }
 
+    private static List<Car> getWinner(List<Car> carList) {
+        int max = getMaxRecord(carList);
+        return carList.stream().filter(car -> car.getPosition() == max).collect(Collectors.toList());
+    }
+
     private static int getMaxRecord(Map<Car, Integer> map) {
 
         return map.values()
@@ -28,7 +33,7 @@ public class GameManager {
     public static void startGame() {
 
         OutputView.MsgInputCars();
-        final LinkedHashMap<Car, Integer> cars = CarManager.createCarMap(InputView.inputCars(scanner.next()));
+        final List<Car> cars = CarManager.createCarList(InputView.inputCars(scanner.next()));
         OutputView.MsgInputNums();
         final int repetition = InputView.inputReps();
 
