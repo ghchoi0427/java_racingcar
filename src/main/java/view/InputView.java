@@ -15,7 +15,7 @@ public class InputView {
 
     public static int inputRepetition() {
         int repetition = scanner.nextInt();
-        InputValidator.repInputVal(repetition);
+        InputValidator.repetitionInputValidator(repetition);
         return repetition;
     }
 }

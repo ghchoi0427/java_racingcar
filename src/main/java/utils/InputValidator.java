@@ -16,7 +16,7 @@ public class InputValidator {
         }
     }
 
-    public static void repInputVal(int repetition) throws IllegalArgumentException {
+    public static void repetitionInputValidator(int repetition) throws IllegalArgumentException {
         if (repetition <= 0) {
             throw new IllegalArgumentException(ERROR_ZERO_INPUT);
         }
