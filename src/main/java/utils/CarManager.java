@@ -8,7 +8,7 @@ public class CarManager {
 
     private static final int MINIMUM_MOVE_CONDITION = 4;
 
-    public CarManager() {
+    private CarManager() {
     }
 
     public static List<Car> createCarList(String[] carNames) {

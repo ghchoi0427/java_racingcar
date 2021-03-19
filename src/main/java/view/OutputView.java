@@ -10,7 +10,7 @@ public class OutputView {
     private static final String MSG_INPUT_REPS = "how many repetitions?";
     private static String MSG_FINAL = "final winner : ";
 
-    public OutputView() {
+    private OutputView() {
     }
 
     public static void MsgInputCars() {

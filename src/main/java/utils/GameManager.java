@@ -11,6 +11,9 @@ public class GameManager {
 
     private static final Scanner scanner = new Scanner(System.in);
 
+    private GameManager() {
+    }
+
     private static List<Car> getWinner(List<Car> carList) {
         return carList
                 .stream()

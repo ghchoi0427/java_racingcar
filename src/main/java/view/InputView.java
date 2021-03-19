@@ -8,6 +8,9 @@ public class InputView {
 
     private static Scanner scanner = new Scanner(System.in);
 
+    private InputView() {
+    }
+
     public static String[] inputCars(String cars) {
         InputValidator.carNameInputValidator(cars);
         return cars.split(",");
