@@ -21,13 +21,13 @@ public class CarManager {
 
     public static void race(List<Car> carList) {
         for (Car car : carList) {
-            car.moveOn();
+            moveCar(car);
         }
     }
 
-    private static void moveCar(LinkedHashMap<Car, Integer> carMap, Car car) {
+    private static void moveCar(Car car) {
         if (isMovable()) {
-            carMap.put(car, carMap.get(car) + 1);
+            car.moveOn();
         }
     }
 
