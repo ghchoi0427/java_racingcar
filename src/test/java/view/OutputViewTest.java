@@ -2,7 +2,6 @@ package view;
 
 import org.junit.jupiter.api.Test;
 import racingcar.Car;
-import utils.GameManager;
 
 import java.util.HashMap;
 import java.util.Map;

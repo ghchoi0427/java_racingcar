@@ -2,8 +2,6 @@ package racingcar;
 
 import utils.RandomUtils;
 
-import java.util.stream.DoubleStream;
-
 public class Car {
     private static final int MINIMUM_MOVE_CONDITION = 4;
 

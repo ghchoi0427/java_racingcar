@@ -1,8 +1,5 @@
-package utils;
+package racingcar;
 
-import racingcar.Car;
-
-import java.lang.instrument.UnmodifiableClassException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -17,7 +14,7 @@ public class CarManager {
     }
 
     public CarManager(final List<Car> cars, final int repetition) {
-        this.cars= new ArrayList<>(cars);
+        this.cars = new ArrayList<>(cars);
         this.repetition = repetition;
     }
 
@@ -46,7 +43,7 @@ public class CarManager {
                 .orElseThrow(NoSuchElementException::new);
     }
 
-    public List<Car> getCars(){
+    public List<Car> getCars() {
         return new ArrayList<>(cars);
     }
 }
