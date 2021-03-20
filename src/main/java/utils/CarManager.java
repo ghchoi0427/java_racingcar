@@ -2,36 +2,51 @@ package utils;
 
 import racingcar.Car;
 
+import java.lang.instrument.UnmodifiableClassException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CarManager {
+    private final List<Car> cars;
+    private int repetition;
 
-    private static final int MINIMUM_MOVE_CONDITION = 4;
-
-    private CarManager() {
+    public CarManager(final String[] carNames, final int repetition) {
+        this(Arrays.stream(carNames)
+                .map(Car::new)
+                .collect(Collectors.toList()), repetition);
     }
 
-    public static List<Car> createCarList(String[] carNames) {
-        List<Car> carList = new ArrayList<>();
-        for (String carName : carNames) {
-            carList.add(new Car(carName));
-        }
-        return carList;
+    public CarManager(final List<Car> cars, final int repetition) {
+        this.cars= new ArrayList<>(cars);
+        this.repetition = repetition;
     }
 
-    public static void race(List<Car> carList) {
-        for (Car car : carList) {
-            moveCar(car);
-        }
+    public void race() {
+        cars.stream()
+                .filter(Car::isMovable)
+                .forEach(Car::moveOn);
+
+        repetition--;
     }
 
-    private static void moveCar(Car car) {
-        if (isMovable()) {
-            car.moveOn();
-        }
+    public boolean isRaceOver() {
+        return repetition < 0;
     }
 
-    private static boolean isMovable() {
-        return RandomUtils.nextInt(0, 9) >= MINIMUM_MOVE_CONDITION;
+    public List<Car> getWinner() {
+        return cars.stream()
+                .filter(car -> car.isOnPosition(getMaxRecord(cars)))
+                .collect(Collectors.toList());
+    }
+
+    private int getMaxRecord(final List<Car> carList) {
+        return carList.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElseThrow(NoSuchElementException::new);
+    }
+
+    public List<Car> getCars(){
+        return new ArrayList<>(cars);
     }
 }

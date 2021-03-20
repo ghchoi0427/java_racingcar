@@ -7,41 +7,34 @@ import view.OutputView;
 import java.util.*;
 import java.util.stream.Collectors;
 
+//controller -> domain을 조합해서 사용하는 거야
+// domain이 car 하나잖아 (객체들을 조합하는 역할)
+
 public class GameManager {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    private GameManager() {
+    public GameManager() {
     }
 
-    private static List<Car> getWinner(List<Car> carList) {
-        return carList
-                .stream()
-                .filter(car -> car.getPosition() == getMaxRecord(carList))
-                .collect(Collectors.toList());
-    }
+    public void startGame() {
+        final CarManager carManager = new CarManager(inputCars(), inputRepetition());
 
-    private static int getMaxRecord(List<Car> carList) {
-        return carList
-                .stream()
-                .map(Car::getPosition)
-                .mapToInt(e -> e)
-                .max()
-                .orElseThrow(NoSuchElementException::new);
-    }
-
-    public static void startGame() {
-
-        OutputView.msgInputCars();
-        final List<Car> cars = CarManager.createCarList(InputView.inputCars(scanner.next()));
-        OutputView.msgInputNums();
-        final int repetition = InputView.inputRepetition();
-
-        for (int i = 0; i < repetition; i++) {
-            CarManager.race(cars);
-            OutputView.printRaceResult(cars);
+        while(!carManager.isRaceOver()){
+            carManager.race();
+            OutputView.printRaceResult(carManager.getCars());
         }
 
-        OutputView.printFinalResult(getWinner(cars));
+        OutputView.printFinalResult(carManager.getWinner());
+    }
+
+    private String[] inputCars(){
+        OutputView.msgInputCars();
+        return InputView.inputCars(scanner.next());
+    }
+
+    private int inputRepetition(){
+        OutputView.msgInputNums();
+        return InputView.inputRepetition();
     }
 }

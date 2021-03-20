@@ -21,7 +21,6 @@ public class OutputView {
     }
 
     public static void printRaceResult(List<Car> carList) {
-
         for (Car car : carList) {
             System.out.format("%s : %s", car.getName(), progressBarFactory(car.getPosition())).println();
         }
